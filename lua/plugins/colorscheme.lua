@@ -3,13 +3,9 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "nordfox",
+      colorscheme = "tokyonight-storm",
     },
   },
-
-  -- NOTE : colorschemes
-  -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-  -- lua/plugins/rose-pine.lua
 
   -- {
   --   'rose-pine/neovim',
@@ -52,41 +48,41 @@ return {
   --   end,
   -- },
 
-  {
-    "EdenEast/nightfox.nvim",
-    priority = 1000, -- Make sure to load this before all the other start plugins.
-    config = function()
-      require("nightfox").setup({
-        options = {
-          styles = {
-            comments = "italic",
-            keywords = "bold",
-            types = "italic,bold",
-          },
-        },
-      })
-    end,
-    init = function()
-      -- vim.cmd.colorscheme 'nightfox'
-      -- vim.cmd.colorscheme 'dayfox'
-      -- vim.cmd.colorscheme 'dawnfox'
-      -- vim.cmd.colorscheme 'duskfox'
-      vim.cmd.colorscheme("nordfox")
-      -- vim.cmd.colorscheme 'terafox'
-      -- vim.cmd.colorscheme 'carbonfox'
-    end,
-  },
-
   -- {
-  --   'folke/tokyonight.nvim',
+  --   "EdenEast/nightfox.nvim",
   --   priority = 1000, -- Make sure to load this before all the other start plugins.
+  --   config = function()
+  --     require("nightfox").setup({
+  --       options = {
+  --         styles = {
+  --           comments = "italic",
+  --           keywords = "bold",
+  --           types = "italic,bold",
+  --         },
+  --       },
+  --     })
+  --   end,
   --   init = function()
-  --     --'tokyonight',  'tokyonight-night', 'tokyonight-storm', 'tokyonight-moon', 'tokyonight-day'.
-  --     vim.cmd.colorscheme 'tokyonight-moon'
-  --     -- You can configure highlights by doing something like:
-  --     vim.cmd.hi 'Comment gui=none'
+  --     -- vim.cmd.colorscheme 'nightfox'
+  --     -- vim.cmd.colorscheme 'dayfox'
+  --     -- vim.cmd.colorscheme 'dawnfox'
+  --     -- vim.cmd.colorscheme 'duskfox'
+  --     vim.cmd.colorscheme("nordfox")
+  --     -- vim.cmd.colorscheme 'terafox'
+  --     -- vim.cmd.colorscheme 'carbonfox'
   --   end,
   -- },
+
+  {
+    "folke/tokyonight.nvim",
+    priority = 1000, -- Make sure to load this before all the other start plugins.
+    init = function()
+      --'tokyonight',  'tokyonight-night', 'tokyonight-storm', 'tokyonight-moon', 'tokyonight-day'.
+      vim.cmd.colorscheme("tokyonight-moon")
+      -- You can configure highlights by doing something like:
+      vim.cmd.hi("Comment gui=none")
+    end,
+  },
 
   -- {
   --   'sainnhe/gruvbox-material',

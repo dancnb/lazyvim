@@ -55,8 +55,12 @@ return {
 
   {
     "rcarriga/nvim-dap-ui",
-    -- lazy = true,
-    -- dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+
+    -- keys = {
+    --   { "<leader>du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
+    --   { "<leader>de", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
+    -- },
+
     opts = {
       layouts = {
         {
@@ -79,22 +83,5 @@ return {
         },
       },
     },
-    -- config = function(opts)
-    --   require("dapui").setup(opts)
-    --
-    --   local listener = require("dap").listeners
-    --   listener.after.event_initialized["dapui_config"] = function()
-    --     require("dapui").open()
-    --   end
-    --   listener.before.event_terminated["dapui_config"] = function()
-    --     require("dapui").close()
-    --   end
-    --   listener.before.event_exited["dapui_config"] = function()
-    --     require("dapui").close()
-    --   end
-    --   vim.keymap.set("n", "<localleader>T", function()
-    --     require("dapui").toggle()
-    --   end, { desc = "Toggle DAP UI" })
-    -- end,
   },
 }

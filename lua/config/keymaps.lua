@@ -6,3 +6,10 @@ vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
 vim.keymap.set("n", "<M-h>", "<cmd>cclose<CR>")
 vim.keymap.set("n", "<M-l>", "<cmd>cope<CR>")
+
+vim.keymap.set("n", "<leader>p", function()
+  require("fzf-lua").oldfiles({
+    cwd_only = true,
+    stat_file = true, -- verify files exist on disk
+  })
+end, { desc = "Recent" })

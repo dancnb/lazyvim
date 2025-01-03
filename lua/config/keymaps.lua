@@ -4,8 +4,9 @@
 
 vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
-vim.keymap.set("n", "<M-h>", "<cmd>cclose<CR>")
-vim.keymap.set("n", "<M-l>", "<cmd>cope<CR>")
+-- vim.keymap.set("n", "<M-h>", "<cmd>cclose<CR>")
+vim.keymap.set("n", "<M-h>", "<cmd>cope<CR>")
+vim.keymap.set("n", "<M-l>", "<cmd>FzfLua quickfix_stack<CR>")
 
 vim.keymap.set("n", "<leader>p", function()
   require("fzf-lua").oldfiles({

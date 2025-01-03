@@ -13,4 +13,4 @@ vim.keymap.set("n", "<leader>p", function()
     cwd_only = true,
     stat_file = true, -- verify files exist on disk
   })
-end, { desc = "Recent" })
+end, { desc = "Recent files" })

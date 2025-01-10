@@ -7,22 +7,21 @@ return {
     end,
   },
 
-  -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight-storm",
+      colorscheme = "gruvbox-material",
     },
   },
 
   -- {
-  --   'rose-pine/neovim',
+  --   "rose-pine/neovim",
   --   priority = 1000, -- Make sure to load this before all the other start plugins.
-  --   name = 'rose-pine',
+  --   name = "rose-pine",
   --   config = function()
-  --     require('rose-pine').setup {
-  --       variant = 'moon', -- auto, main, moon, or dawn
-  --       dark_variant = 'main', -- main, moon, or dawn
+  --     require("rose-pine").setup({
+  --       variant = "moon", -- auto, main, moon, or dawn
+  --       dark_variant = "main", -- main, moon, or dawn
   --       dim_inactive_windows = false,
   --       extend_background_behind_borders = true,
   --       enable = {
@@ -35,21 +34,21 @@ return {
   --         italic = true,
   --         transparency = false,
   --       },
-  --     }
+  --     })
   --   end,
   --   init = function()
-  --     vim.cmd 'colorscheme rose-pine'
+  --     vim.cmd("colorscheme rose-pine")
   --   end,
   -- },
 
   -- {
-  --   'rebelot/kanagawa.nvim',
+  --   "rebelot/kanagawa.nvim",
   --   priority = 1000, -- Make sure to load this before all the other start plugins.
   --   config = function()
-  --     require('kanagawa').setup {}
+  --     require("kanagawa").setup({})
   --   end,
   --   init = function()
-  --     vim.cmd.colorscheme 'kanagawa'
+  --     vim.cmd.colorscheme("kanagawa")
   --     -- vim.cmd.colorscheme 'kanagawa-wave'
   --     -- vim.cmd.colorscheme 'kanagawa-dragon'
   --     -- vim.cmd.colorscheme 'kanagawa-lotus'
@@ -81,35 +80,35 @@ return {
   --   end,
   -- },
 
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   priority = 1000, -- Make sure to load this before all the other start plugins.
+  --   init = function()
+  --     --'tokyonight',  'tokyonight-night', 'tokyonight-storm', 'tokyonight-moon', 'tokyonight-day'.
+  --     vim.cmd.colorscheme("tokyonight-day")
+  --     -- You can configure highlights by doing something like:
+  --     vim.cmd.hi("Comment gui=none")
+  --   end,
+  -- },
+
   {
-    "folke/tokyonight.nvim",
-    priority = 1000, -- Make sure to load this before all the other start plugins.
-    init = function()
-      --'tokyonight',  'tokyonight-night', 'tokyonight-storm', 'tokyonight-moon', 'tokyonight-day'.
-      vim.cmd.colorscheme("tokyonight-moon")
-      -- You can configure highlights by doing something like:
-      vim.cmd.hi("Comment gui=none")
+    "sainnhe/gruvbox-material",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- Optionally configure and load the colorscheme
+      -- directly inside the plugin declaration.
+      vim.g.gruvbox_material_enable_italic = true
+      vim.cmd.colorscheme("gruvbox-material")
     end,
   },
 
-  -- {
-  --   'sainnhe/gruvbox-material',
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     -- Optionally configure and load the colorscheme
-  --     -- directly inside the plugin declaration.
-  --     vim.g.gruvbox_material_enable_italic = true
-  --     vim.cmd.colorscheme 'gruvbox-material'
-  --   end,
-  -- },
-
-  -- {
-  --   'AlexvZyl/nordic.nvim',
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     require('nordic').load()
-  --   end,
-  -- },
+  --   {
+  --     "AlexvZyl/nordic.nvim",
+  --     lazy = false,
+  --     priority = 1000,
+  --     config = function()
+  --       require("nordic").load()
+  --     end,
+  --   },
 }

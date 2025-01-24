@@ -10,7 +10,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox-material",
+      colorscheme = "tokyonight-storm",
     },
   },
 
@@ -80,35 +80,35 @@ return {
   --   end,
   -- },
 
-  -- {
-  --   "folke/tokyonight.nvim",
-  --   priority = 1000, -- Make sure to load this before all the other start plugins.
-  --   init = function()
-  --     --'tokyonight',  'tokyonight-night', 'tokyonight-storm', 'tokyonight-moon', 'tokyonight-day'.
-  --     vim.cmd.colorscheme("tokyonight-day")
-  --     -- You can configure highlights by doing something like:
-  --     vim.cmd.hi("Comment gui=none")
-  --   end,
-  -- },
-
   {
-    "sainnhe/gruvbox-material",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      -- Optionally configure and load the colorscheme
-      -- directly inside the plugin declaration.
-      vim.g.gruvbox_material_enable_italic = true
-      vim.cmd.colorscheme("gruvbox-material")
+    "folke/tokyonight.nvim",
+    priority = 1000, -- Make sure to load this before all the other start plugins.
+    init = function()
+      --'tokyonight',  'tokyonight-night', 'tokyonight-storm', 'tokyonight-moon', 'tokyonight-day'.
+      vim.cmd.colorscheme("tokyonight-day")
+      -- You can configure highlights by doing something like:
+      vim.cmd.hi("Comment gui=none")
     end,
   },
 
-  --   {
-  --     "AlexvZyl/nordic.nvim",
-  --     lazy = false,
-  --     priority = 1000,
-  --     config = function()
-  --       require("nordic").load()
-  --     end,
-  --   },
+  -- {
+  --   "sainnhe/gruvbox-material",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     -- Optionally configure and load the colorscheme
+  --     -- directly inside the plugin declaration.
+  --     vim.g.gruvbox_material_enable_italic = true
+  --     vim.cmd.colorscheme("gruvbox-material")
+  --   end,
+  -- },
+
+  -- {
+  --   "AlexvZyl/nordic.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("nordic").load()
+  --   end,
+  -- },
 }

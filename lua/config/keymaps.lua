@@ -14,7 +14,14 @@ vim.keymap.set("n", "<leader>p", function()
   })
 end, { desc = "Recent files" })
 
+vim.keymap.set("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", { desc = "Git Diff" })
 vim.keymap.set("n", "<leader>gl", "<cmd>DiffviewFileHistory<CR>", { desc = "Git Log" })
 vim.keymap.set("n", "<leader>gf", "<cmd>DiffviewFileHistory %<CR>", { desc = "Git File History" })
-vim.keymap.set("v", "<leader>gB", "<cmd>'<,'>DiffviewFileHistory<CR>", { desc = "Git Selection History" })
-vim.keymap.set("n", "<leader>gs", "<cmd>DiffviewOpen<CR>", { desc = "Git Status" })
+vim.keymap.set("v", "<leader>gb", "<cmd>'<,'>DiffviewFileHistory<CR>", { desc = "Git Selection History" })
+-- vim.keymap.set(
+--   "n",
+--   "<leader>gB",
+--   "<cmd>DiffviewOpen origin/HEAD...HEAD --imply-local<CR>",
+--   { desc = "Review branch changes" }
+-- )
+vim.keymap.set("n", "<leader>gm", "<cmd>DiffviewOpen origin/main...HEAD --imply-local<cr>", { desc = "Git Diff main" })

@@ -14,6 +14,18 @@ return {
       "ibhagwan/fzf-lua", -- optional
       -- "echasnovski/mini.pick", -- optional
     },
+    cmd = { "DiffviewOpen", "DiffviewFileHistory" },
     config = true,
+    opts = {
+      enhanced_diff_hl = true,
+      use_icons = true,
+      view = {
+        default = { layout = "diff2_horizontal" },
+        merge_tool = {
+          -- layout = "diff4_mixed",
+          disable_diagnostics = true,
+        },
+      },
+    },
   },
 }

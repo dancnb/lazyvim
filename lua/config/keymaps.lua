@@ -13,3 +13,8 @@ vim.keymap.set("n", "<leader>p", function()
     stat_file = true, -- verify files exist on disk
   })
 end, { desc = "Recent files" })
+
+vim.keymap.set("n", "<leader>gl", "<cmd>DiffviewFileHistory<CR>", { desc = "Git Log" })
+vim.keymap.set("n", "<leader>gf", "<cmd>DiffviewFileHistory %<CR>", { desc = "Git File History" })
+vim.keymap.set("v", "<leader>gB", "<cmd>'<,'>DiffviewFileHistory<CR>", { desc = "Git Selection History" })
+vim.keymap.set("n", "<leader>gs", "<cmd>DiffviewOpen<CR>", { desc = "Git Status" })

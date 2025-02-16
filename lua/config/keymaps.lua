@@ -25,3 +25,23 @@ vim.keymap.set("v", "<leader>gb", "<cmd>'<,'>DiffviewFileHistory<CR>", { desc = 
 --   { desc = "Review branch changes" }
 -- )
 vim.keymap.set("n", "<leader>gm", "<cmd>DiffviewOpen origin/main...HEAD --imply-local<cr>", { desc = "Git Diff main" })
+
+-- Set up the keybinding for visual mode
+vim.keymap.set(
+  "v",
+  "<leader>gc",
+  function()
+    -- Get the selected text (commit hash) from visual mode
+    local commit_hash = table.concat(vim.fn.getregion(vim.fn.getpos("v"), vim.fn.getpos(".")), "\n")
+
+    -- Check if the selected text is a valid commit hash
+    if string.len(commit_hash) > 0 then
+      -- Open Diffview with the commit hash against its parent
+      vim.cmd("DiffviewOpen " .. commit_hash .. "^!")
+    else
+      vim.notify("No commit hash selected!", vim.log.levels.WARN, { title = "Diffview" })
+    end
+  end,
+  -- ":lua open_diffview_with_commit_from_selection()<CR>",
+  { noremap = true, desc = "Git View Commit" }
+)

@@ -8,7 +8,7 @@ return {
       view = {
         default = { layout = "diff2_horizontal" },
         merge_tool = {
-          -- layout = "diff4_mixed",
+          -- layout = "diff3_mixed", -- diff3_mixed diff3_plain diff4_mixed diff4_plain
           disable_diagnostics = true,
         },
       },
